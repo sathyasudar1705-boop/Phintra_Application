@@ -1,0 +1,8 @@
+{
+  "name": "phintra-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd phishguard-ai && npm install && npm run build && cd .. && node copy-build.js"
+  }
+}
