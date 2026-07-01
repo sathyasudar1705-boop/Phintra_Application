@@ -6,7 +6,7 @@ from app.models.employee import Employee
 from app.models.training import TrainingModule
 from app.models.user import User
 from app.schemas.certificate_schema import CertificateCreate, CertificateResponse
-from app.utils.dependencies import require_manager, require_employee
+from app.dependencies import require_manager, require_employee
 from uuid import UUID
 import secrets
 from typing import List
@@ -49,6 +49,8 @@ def issue_certificate(req: CertificateCreate, db: Session = Depends(get_db), cur
     db.refresh(db_cert)
     return db_cert
 
+from app.config import settings
+
 @router.get("/{id}/download")
 def download_certificate(id: UUID, db: Session = Depends(get_db), current_user: User = Depends(require_employee)):
     """Download certificate metadata (Employees, Managers, Admins)."""
@@ -66,5 +68,5 @@ def download_certificate(id: UUID, db: Session = Depends(get_db), current_user: 
         "module_title": mod.title if mod else "Unknown Module",
         "verification_code": cert.verification_code,
         "issued_at": cert.issued_at.isoformat(),
-        "download_url": f"http://127.0.0.1:8000/certificates/{cert.id}/download"
+        "download_url": f"{settings.FRONTEND_URL}/api/certificates/{cert.id}/download"
     }

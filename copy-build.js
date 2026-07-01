@@ -17,7 +17,7 @@ function copyFolderSync(from, to) {
     });
 }
 
-const srcDir = path.join(__dirname, 'phishguard-ai', 'dist');
+const srcDir = path.join(__dirname, 'frontend', 'dist');
 const destDir = path.join(__dirname, 'public');
 
 // Clean existing public folder

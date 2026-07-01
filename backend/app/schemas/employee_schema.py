@@ -9,6 +9,7 @@ class EmployeeBase(BaseModel):
     last_name: Optional[str] = None
     email: EmailStr
     department_id: UUID
+    company_id: Optional[UUID] = None
     risk_score: float = 0.0
     status: str = "Low Risk"
     is_active: Optional[bool] = True
@@ -24,6 +25,7 @@ class EmployeeUpdate(BaseModel):
     last_name: Optional[str] = None
     email: Optional[EmailStr] = None
     department_id: Optional[UUID] = None
+    company_id: Optional[UUID] = None
     risk_score: Optional[float] = None
     status: Optional[str] = None
     password: Optional[str] = None
@@ -42,3 +44,7 @@ class EmployeeDetailResponse(EmployeeResponse):
     department_name: Optional[str] = None
     is_active: bool = True
     has_password: bool = False
+    total_points: Optional[int] = 0
+    click_count: Optional[int] = 0
+    report_count: Optional[int] = 0
+    training_progress: Optional[str] = "0.0%"

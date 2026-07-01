@@ -1,0 +1,24 @@
+{
+  "timeZone": "GMT",
+  "dependencies": {
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/gmail.addons.execute",
+    "https://www.googleapis.com/auth/gmail.addons.current.message.readonly",
+    "https://www.googleapis.com/auth/gmail.addons.current.message.action",
+    "https://www.googleapis.com/auth/script.external_request"
+  ],
+  "runtimeVersion": "V8",
+  "gmail": {
+    "name": "Phintra Email Reporter",
+    "logoUrl": "https://www.gstatic.com/images/icons/material/system/1x/report_problem_black_24dp.png",
+    "contextualTriggers": [{
+      "unconditional": {
+      },
+      "onTriggerFunction": "buildAddOn"
+    }],
+    "primaryColor": "#2563eb",
+    "secondaryColor": "#1e3a8a"
+  }
+}

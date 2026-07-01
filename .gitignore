@@ -4,4 +4,7 @@ node_modules/
 .vercel/
 .env
 .env.local
-.env.production 
+.env.production
+scratch/
+public/
+*.log

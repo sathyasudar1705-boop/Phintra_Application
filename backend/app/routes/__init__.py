@@ -10,6 +10,12 @@ from app.routes.emails import router as emails_router
 from app.routes.analytics import router as analytics_router
 from app.routes.notifications import router as notifications_router
 from app.routes.audit_logs import router as audit_logs_router
+from app.routes.companies import router as companies_router
+from app.routes.messages import router as messages_router
+from app.routes.leaderboard import router as leaderboard_router
+from app.routes.gmail import router as gmail_router
+from app.routes.sender_profiles import router as sender_profiles_router
+from app.routes.outlook import router as outlook_router
 
 __all__ = [
     "auth_router",
@@ -23,5 +29,11 @@ __all__ = [
     "emails_router",
     "analytics_router",
     "notifications_router",
-    "audit_logs_router"
+    "audit_logs_router",
+    "companies_router",
+    "messages_router",
+    "leaderboard_router",
+    "gmail_router",
+    "sender_profiles_router",
+    "outlook_router"
 ]
